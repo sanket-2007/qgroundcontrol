@@ -44,7 +44,7 @@ set(QGC_DISABLE_APM_PLUGIN_FACTORY ON CACHE BOOL "Disable APM Plugin Factory" FO
 # Implement custom PX4 plugin factory
 set(QGC_DISABLE_PX4_PLUGIN_FACTORY ON CACHE BOOL "Disable PX4 Plugin Factory" FORCE)
 
-set(QGC_APP_NAME "Protthapan Technologies" CACHE STRING "Application name" FORCE)
+set(QGC_APP_NAME "ProtthapanGCS" CACHE STRING "Application name" FORCE)
 set(QGC_ORG_NAME "Protthapan Technologies Pvt. Ltd." CACHE STRING "Organization name" FORCE)
 set(QGC_APP_DESCRIPTION "Protthapan Technologies Ground Control Station" CACHE STRING "Application description" FORCE)
 set(QGC_PACKAGE_NAME "com.protthapan.gcs" CACHE STRING "Package identifier" FORCE)
