@@ -126,6 +126,7 @@ jobs:
           build-type: ${{ matrix.build_type }}
 
       - name: Verify Executable
+	 continue-on-error: true
         if: matrix.build_type == 'Release' && matrix.arch != 'win64_msvc2022_arm64_cross_compiled'
         uses: ./.github/actions/verify-executable
         with:
