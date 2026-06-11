@@ -30,7 +30,7 @@ jobs:
           host: "windows"
           target: "desktop"
           arch: "win64_msvc2022_64"
-          modules: "qtgraphs"
+          modules: "qtgraphs qtquick3d"
           cache: "true"
 
       - name: Setup MSVC 2022
