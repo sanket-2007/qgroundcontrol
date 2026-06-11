@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 180">
+  <rect width="720" height="180" fill="none"/>
+  <path d="M75 30 L150 90 L75 150 L95 104 L38 104 L38 76 L95 76 Z" fill="#D8FFE6"/>
+  <circle cx="118" cy="90" r="58" fill="none" stroke="#D8FFE6" stroke-width="4"/>
+  <circle cx="118" cy="90" r="35" fill="none" stroke="#D8FFE6" stroke-width="2" opacity="0.55" stroke-dasharray="8 8"/>
+  <path d="M118 54 L118 126 M82 90 L154 90" stroke="#D8FFE6" stroke-width="2" opacity="0.7"/>
+  <text x="205" y="76" font-family="Orbitron, Rajdhani, Arial, sans-serif" font-size="38" font-weight="800" fill="#D8FFE6" letter-spacing="2">PROTTHAPAN</text>
+  <text x="207" y="118" font-family="Rajdhani, Arial, sans-serif" font-size="28" font-weight="600" fill="#D8FFE6" letter-spacing="4">TECHNOLOGIES</text>
+</svg>

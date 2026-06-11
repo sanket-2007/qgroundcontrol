@@ -1,0 +1,13 @@
+<RCC>
+    <qresource prefix="/custom">
+        <file alias="res/Images/protthapan-logo-catalog.png">res/Images/protthapan-logo-catalog.png</file>
+        <file alias="res/Images/protthapan-logo-catalog-transparent.png">res/Images/protthapan-logo-catalog-transparent.png</file>
+        <file alias="res/Images/protthapan-logo-toolbar.png">res/Images/protthapan-logo-toolbar.png</file>
+        <file alias="res/Images/splash.png">res/Images/splash.png</file>
+        <file alias="res/Images/app-icon.png">res/Images/app-icon.png</file>
+        <file alias="res/Images/app-icon.ico">res/Images/app-icon.ico</file>
+        <file alias="src/FlyViewCustomLayer.qml">src/FlyViewCustomLayer.qml</file>
+        <file alias="src/ProtthapanSettings.qml">src/ProtthapanSettings.qml</file>
+        <file alias="src/ProtthapanMapToolbarOverlay.qml">src/ProtthapanMapToolbarOverlay.qml</file>
+    </qresource>
+</RCC>
