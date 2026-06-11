@@ -6,6 +6,10 @@ on:
 jobs:
   build-windows:
     runs-on: windows-2022
+    timeout-minutes: 120
+
+    env:
+      CMAKE_BUILD_PARALLEL_LEVEL: 2
 
     steps:
       - name: Checkout source with submodules
@@ -14,15 +18,15 @@ jobs:
           submodules: recursive
           fetch-depth: 1
 
-      - name: Setup Python
+      - name: Setup Python 3.12
         uses: actions/setup-python@v5
         with:
           python-version: "3.12"
 
-      - name: Install Qt 6.8.3
+      - name: Install Qt 6.10.1
         uses: jurplel/install-qt-action@v4
         with:
-          version: "6.8.3"
+          version: "6.10.1"
           host: "windows"
           target: "desktop"
           arch: "win64_msvc2022_64"
@@ -32,20 +36,47 @@ jobs:
         uses: ilammy/msvc-dev-cmd@v1
 
       - name: Install Ninja
-        run: choco install ninja -y
+        shell: pwsh
+        run: |
+          choco install ninja -y
+
+      - name: Verify tools
+        shell: pwsh
+        run: |
+          echo "QT_ROOT_DIR=$env:QT_ROOT_DIR"
+          where cmake
+          where ninja
+          where qt-cmake.bat
+          python --version
+          cmake --version
+          ninja --version
 
       - name: Configure CMake
         shell: pwsh
         run: |
-          cmake -B build -G Ninja -DCMAKE_BUILD_TYPE=Release
+          & "$env:QT_ROOT_DIR\bin\qt-cmake.bat" -B build -G Ninja -DCMAKE_BUILD_TYPE=Release
 
       - name: Build
         shell: pwsh
         run: |
           cmake --build build --config Release --parallel 2
 
-      - name: Upload build folder
+      - name: Collect build output
+        shell: pwsh
+        run: |
+          New-Item -ItemType Directory -Force -Path artifact
+          $exe = Get-ChildItem -Path build -Filter "QGroundControl.exe" -Recurse | Select-Object -First 1
+
+          if ($null -eq $exe) {
+            Write-Error "QGroundControl.exe not found in build folder"
+            exit 1
+          }
+
+          Write-Host "Found EXE at: $($exe.FullName)"
+          Copy-Item -Recurse -Force "$($exe.Directory.FullName)\*" artifact\
+
+      - name: Upload Windows build artifact
         uses: actions/upload-artifact@v4
         with:
-          name: Protthapan-GCS-Windows-Build
-          path: build
+          name: Protthapan-GCS-Windows
+          path: artifact
