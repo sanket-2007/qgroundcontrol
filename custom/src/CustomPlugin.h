@@ -59,6 +59,10 @@ class CustomPlugin : public QGCCorePlugin
     Q_OBJECT
 
 public:
+
+    QString brandImageIndoor(void) const;
+    QString brandImageOutdoor(void) const;
+
     explicit CustomPlugin(QObject *parent = nullptr);
 
     static QGCCorePlugin *instance();
@@ -94,6 +98,7 @@ private:
     QQmlApplicationEngine *_qmlEngine = nullptr;
     class CustomOverrideInterceptor *_selector = nullptr;
     QVariantList _customSettingsList; // Not to be mixed up with QGCCorePlugin implementation
+
 };
 
 /*===========================================================================*/
