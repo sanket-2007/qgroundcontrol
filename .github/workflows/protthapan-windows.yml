@@ -1,0 +1,23 @@
+name: Protthapan Windows Build
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - master
+
+jobs:
+  build-windows:
+    runs-on: windows-2022
+
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive
+
+      - name: Trigger existing Windows build
+        shell: pwsh
+        run: |
+          Write-Host "This workflow is only to make Protthapan Windows Build visible in Actions."
+          Write-Host "Now use Actions tab to run this workflow."
