@@ -34,7 +34,7 @@ jobs:
           target: "desktop"
           arch: "win64_msvc2022_64"
           cache: "false"
-          modules: "qt5compat qtcharts qtgraphs qthttpserver qtimageformats qtlocation qtmultimedia qtpositioning qtquick3d qtscxml qtsensors qtserialport qtshadertools qtspeech qtwebchannel qtwebsockets"
+          modules: "qt5compat qtcharts qtconnectivity qtgraphs qthttpserver qtimageformats qtlocation qtmultimedia qtpositioning qtquick3d qtscxml qtsensors qtserialport qtshadertools qtspeech qtwebchannel qtwebsockets"
 
       - name: Setup MSVC 2022
         uses: ilammy/msvc-dev-cmd@v1
