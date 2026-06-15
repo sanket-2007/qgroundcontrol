@@ -9,15 +9,77 @@ on:
 jobs:
   build-windows:
     runs-on: windows-2022
+    timeout-minutes: 180
+
+    env:
+      CMAKE_BUILD_PARALLEL_LEVEL: 2
 
     steps:
-      - name: Checkout source
+      - name: Checkout source with submodules
         uses: actions/checkout@v4
         with:
           submodules: recursive
+          fetch-depth: 1
 
-      - name: Trigger existing Windows build
+      - name: Setup Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install Qt 6.10.1 with required modules
+        uses: jurplel/install-qt-action@v4
+        with:
+          version: "6.10.1"
+          host: "windows"
+          target: "desktop"
+          arch: "win64_msvc2022_64"
+          cache: "false"
+          modules: "qt5compat qtcharts qtgraphs qthttpserver qtimageformats qtlocation qtmultimedia qtpositioning qtquick3d qtscxml qtsensors qtserialport qtshadertools qtspeech qtwebchannel qtwebsockets"
+
+      - name: Setup MSVC 2022
+        uses: ilammy/msvc-dev-cmd@v1
+
+      - name: Install Ninja
         shell: pwsh
         run: |
-          Write-Host "This workflow is only to make Protthapan Windows Build visible in Actions."
-          Write-Host "Now use Actions tab to run this workflow."
+          choco install ninja -y
+
+      - name: Configure CMake
+        shell: pwsh
+        run: |
+          & "$env:QT_ROOT_DIR\bin\qt-cmake.bat" `
+            -B build `
+            -G Ninja `
+            -DCMAKE_BUILD_TYPE=Release `
+            -DCMAKE_PREFIX_PATH="$env:QT_ROOT_DIR"
+
+      - name: Build
+        shell: pwsh
+        run: |
+          cmake --build build --config Release --parallel 2
+
+      - name: Find and collect EXE
+        shell: pwsh
+        run: |
+          New-Item -ItemType Directory -Force -Path artifact
+
+          Write-Host "Searching for EXE files..."
+          Get-ChildItem -Path build -Filter "*.exe" -Recurse | ForEach-Object {
+            Write-Host $_.FullName
+          }
+
+          $exe = Get-ChildItem -Path build -Filter "*.exe" -Recurse | Select-Object -First 1
+
+          if ($null -eq $exe) {
+            Write-Error "No EXE file found in build folder"
+            exit 1
+          }
+
+          Write-Host "Using EXE: $($exe.FullName)"
+          Copy-Item -Recurse -Force "$($exe.Directory.FullName)\*" artifact\
+
+      - name: Upload Protthapan Windows build
+        uses: actions/upload-artifact@v4
+        with:
+          name: Protthapan-GCS-Windows
+          path: artifact
