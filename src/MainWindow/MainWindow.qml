@@ -1,4 +1,4 @@
-import QtQuick
+﻿import QtQuick
 import QtQuick.Controls
 import QtQuick.Dialogs
 import QtQuick.Layouts
@@ -773,4 +773,89 @@ ApplicationWindow {
             }
         }
     }
+
+    // Protthapan startup branding overlay
+    Item {
+        id: protthapanSplashOverlay
+        objectName: "protthapanSplashOverlay"
+        anchors.fill: parent
+        z: 999999
+        visible: true
+
+        Rectangle {
+            anchors.fill: parent
+            color: "#050F0A"
+        }
+
+        Rectangle {
+            anchors.centerIn: parent
+            width: 680
+            height: 340
+            radius: 22
+            color: "#071A11"
+            border.color: "#00FF88"
+            border.width: 2
+            opacity: 0.96
+        }
+
+        Column {
+            anchors.centerIn: parent
+            spacing: 18
+
+            Rectangle {
+                width: 105
+                height: 105
+                radius: 24
+                color: "#06140D"
+                border.color: "#00D4FF"
+                border.width: 3
+                anchors.horizontalCenter: parent.horizontalCenter
+
+                Text {
+                    anchors.centerIn: parent
+                    text: "P"
+                    color: "#00FF88"
+                    font.pixelSize: 58
+                    font.bold: true
+                }
+            }
+
+            Text {
+                text: "ProtthapanGCS"
+                color: "#E8FFF1"
+                font.pixelSize: 42
+                font.bold: true
+                anchors.horizontalCenter: parent.horizontalCenter
+            }
+
+            Text {
+                text: "Ground Control Station"
+                color: "#00FF88"
+                font.pixelSize: 20
+                anchors.horizontalCenter: parent.horizontalCenter
+            }
+
+            Text {
+                text: "Protthapan Technologies Pvt. Ltd."
+                color: "#00D4FF"
+                font.pixelSize: 18
+                anchors.horizontalCenter: parent.horizontalCenter
+            }
+
+            Text {
+                text: "MISSION READY  â€¢  SECURE  â€¢  AUTONOMOUS"
+                color: "#9FD8C8"
+                font.pixelSize: 13
+                anchors.horizontalCenter: parent.horizontalCenter
+            }
+        }
+
+        Timer {
+            interval: 2500
+            running: true
+            repeat: false
+            onTriggered: protthapanSplashOverlay.visible = false
+        }
+    }
 }
+
