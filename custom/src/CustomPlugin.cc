@@ -227,11 +227,11 @@ QList<PlanCreator *> CustomPlugin::planCreators(PlanMasterController *planMaster
 
 QString CustomPlugin::brandImageIndoor(void) const
 {
-    return QStringLiteral("/custom/res/Images/protthapan-logo-catalog.png");
+    return QStringLiteral(":/custom/res/Images/protthapan-logo-catalog.png");
 }
 
 QString CustomPlugin::brandImageOutdoor(void) const
 {
-    return QStringLiteral("/custom/res/Images/protthapan-logo-catalog-transparent.png");
+    return QStringLiteral(":/custom/res/Images/protthapan-logo-catalog-transparent.png");
 }
 

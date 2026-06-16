@@ -802,22 +802,13 @@ ApplicationWindow {
             anchors.centerIn: parent
             spacing: 18
 
-            Rectangle {
+            Image {
                 width: 105
                 height: 105
-                radius: 24
-                color: "#06140D"
-                border.color: "#00D4FF"
-                border.width: 3
                 anchors.horizontalCenter: parent.horizontalCenter
-
-                Text {
-                    anchors.centerIn: parent
-                    text: "P"
-                    color: "#00FF88"
-                    font.pixelSize: 58
-                    font.bold: true
-                }
+                source: "qrc:/custom/res/Images/splash.png"
+                fillMode: Image.PreserveAspectFit
+                smooth: true
             }
 
             Text {
@@ -843,7 +834,7 @@ ApplicationWindow {
             }
 
             Text {
-                text: "MISSION READY  â€¢  SECURE  â€¢  AUTONOMOUS"
+                text: "MISSION READY | SECURE | AUTONOMOUS"
                 color: "#9FD8C8"
                 font.pixelSize: 13
                 anchors.horizontalCenter: parent.horizontalCenter
