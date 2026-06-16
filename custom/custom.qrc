@@ -6,6 +6,8 @@
         <file alias="res/Images/splash.png">res/Images/splash.png</file>
         <file alias="res/Images/app-icon.png">res/Images/app-icon.png</file>
         <file alias="res/Images/app-icon.ico">res/Images/app-icon.ico</file>
+        <file alias="res/Images/protthapan-logo-white.svg">res/Images/protthapan-logo-white.svg</file>
+        <file alias="res/Images/protthapan-logo.svg">res/Images/protthapan-logo.svg</file>
         <file alias="src/FlyViewCustomLayer.qml">src/FlyViewCustomLayer.qml</file>
         <file alias="src/ProtthapanSettings.qml">src/ProtthapanSettings.qml</file>
         <file alias="src/ProtthapanMapToolbarOverlay.qml">src/ProtthapanMapToolbarOverlay.qml</file>
