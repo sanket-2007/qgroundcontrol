@@ -4,6 +4,7 @@
         <file alias="opensans-demibold">resources/fonts/OpenSans-Semibold.ttf</file>
         <file alias="NanumGothic-Regular">resources/fonts/NanumGothic-Regular.ttf</file>
         <file alias="NanumGothic-Bold">resources/fonts/NanumGothic-Bold.ttf</file>
+        <file alias="res/protthapan-logo-toolbar.png">resources/protthapan-logo-toolbar.png</file>
     </qresource>
     <qresource prefix="/res">
         <file alias="BingNoTileBytes.dat">resources/BingNoTileBytes.dat</file>
@@ -20,5 +21,6 @@
         <file alias="TrashDelete.svg">resources/TrashDelete.svg</file>
         <file alias="XDelete.svg">resources/XDelete.svg</file>
         <file alias="qgroundcontrol.ico">resources/icons/qgroundcontrol.ico</file>
+        <file alias="res/protthapan-logo-toolbar.png">resources/protthapan-logo-toolbar.png</file>
     </qresource>
 </RCC>
