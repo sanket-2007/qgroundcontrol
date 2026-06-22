@@ -74,13 +74,17 @@ Item {
                         height:     parent.height
                         spacing:    0
 
-                        QGCToolBarButton {
+                        Image {
                             id:                 qgcButton
                             objectName:         "toolbar_qgcLogo"
                             Layout.fillHeight:  true
-                            icon.source: "qrc:/custom/res/Images/protthapan-logo-white.svg"
-                            logo:               true
-                            onClicked:          mainWindow.showToolSelectDialog()
+                            source:             "qrc:/custom/res/Images/app-icon.png"
+                            fillMode:           Image.PreserveAspectFit
+                            smooth:             true
+                            MouseArea {
+                                anchors.fill:   parent
+                                onClicked:      mainWindow.showToolSelectDialog()
+                            }
                         }
 
                         MainStatusIndicator {

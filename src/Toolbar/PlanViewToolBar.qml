@@ -33,13 +33,17 @@ Rectangle {
         visible: qgcPal.globalTheme === QGCPalette.Light
     }
 
-    QGCToolBarButton {
-        id: qgcButton
+    Image {
+        id:         qgcButton
         objectName: "toolbar_qgcLogo"
-        height: parent.height
-        icon.source: "qrc:/custom/res/Images/app-icon.png"
-        logo: true
-        onClicked: mainWindow.showToolSelectDialog()
+        height:     parent.height
+        source:     "qrc:/custom/res/Images/app-icon.png"
+        fillMode:   Image.PreserveAspectFit
+        smooth:     true
+        MouseArea {
+            anchors.fill: parent
+            onClicked:    mainWindow.showToolSelectDialog()
+        }
     }
 
     QGCFlickable {
