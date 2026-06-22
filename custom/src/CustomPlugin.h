@@ -78,6 +78,7 @@ public:
     /// We override this so we can get access to QQmlApplicationEngine and use it to register our qml module
     QQmlApplicationEngine *createQmlApplicationEngine(QObject *parent) final;
 
+    QVariantList& settingsPages() final;
     /// Adds the Perimeter Scan item to the complex-item menu.
     QVariantList complexMissionItemNames(Vehicle *vehicle) final;
     /// Factory: creates PerimeterScanComplexItem for our custom type, falls back to base for built-ins.

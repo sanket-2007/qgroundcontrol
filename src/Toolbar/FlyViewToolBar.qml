@@ -78,6 +78,7 @@ Item {
                             id:                 qgcButton
                             objectName:         "toolbar_qgcLogo"
                             Layout.fillHeight:  true
+                            Layout.preferredWidth: ScreenTools.defaultFontPixelHeight * 3
                             source:             "qrc:/custom/res/Images/app-icon.png"
                             fillMode:           Image.PreserveAspectFit
                             smooth:             true

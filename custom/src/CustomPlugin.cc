@@ -40,6 +40,13 @@ CustomPlugin::CustomPlugin(QObject *parent)
 
     _showAdvancedUI = false;
     (void) connect(this, &QGCCorePlugin::showAdvancedUIChanged, this, &CustomPlugin::_advancedChanged);
+
+    _addSettingsEntry(tr("Protthapan"), "qrc:/custom/src/ProtthapanSettings.qml");
+}
+
+QVariantList& CustomPlugin::settingsPages()
+{
+    return _customSettingsList;
 }
 
 QGCCorePlugin *CustomPlugin::instance()

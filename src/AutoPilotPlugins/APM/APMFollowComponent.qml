@@ -345,7 +345,7 @@ SetupPage {
                     Image {
                         id:                 gcsIcon
                         anchors.centerIn:   parent
-                        source:             "/res/QGCLogoArrow.svg"
+                        source: "qrc:/custom/res/Images/protthapan-logo-white.svg"
                         mipmap:             true
                         antialiasing:       true
                         fillMode:           Image.PreserveAspectFit
