@@ -11,5 +11,6 @@
         <file alias="src/FlyViewCustomLayer.qml">src/FlyViewCustomLayer.qml</file>
         <file alias="src/ProtthapanSettings.qml">src/ProtthapanSettings.qml</file>
         <file alias="src/ProtthapanMapToolbarOverlay.qml">src/ProtthapanMapToolbarOverlay.qml</file>
+        <file alias="res/Images/protthapan-icon-white.svg">res/Images/protthapan-icon-white.svg</file>
     </qresource>
 </RCC>

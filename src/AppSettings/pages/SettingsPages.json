@@ -5,7 +5,7 @@
         {
             "name": "General",
             "qml": "GeneralSettings.qml",
-            "icon": "qrc:/custom/res/Images/app-icon.png",
+            "icon": "qrc:/custom/res/Images/protthapan-icon-white.svg",
             "pageDefinition": "General.SettingsUI.json"
         },
         {

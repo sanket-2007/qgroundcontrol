@@ -74,14 +74,17 @@ Item {
                         height:     parent.height
                         spacing:    0
 
-                        Image {
+                       Image {
                             id:                 qgcButton
                             objectName:         "toolbar_qgcLogo"
                             Layout.fillHeight:  true
-                            Layout.preferredWidth: ScreenTools.defaultFontPixelHeight * 3
+                            Layout.preferredWidth: ScreenTools.defaultFontPixelHeight * 4
                             source:             "qrc:/custom/res/Images/app-icon.png"
+                            sourceSize.width:   512
+                            sourceSize.height:  512
                             fillMode:           Image.PreserveAspectFit
-                            smooth:             true
+                            smooth:             false
+                            antialiasing:       false
                             MouseArea {
                                 anchors.fill:   parent
                                 onClicked:      mainWindow.showToolSelectDialog()
