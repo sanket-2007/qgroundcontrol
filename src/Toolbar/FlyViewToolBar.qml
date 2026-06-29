@@ -83,8 +83,9 @@ Item {
                             sourceSize.width:   512
                             sourceSize.height:  512
                             fillMode:           Image.PreserveAspectFit
-                            smooth:             false
+                            smooth:             true
                             antialiasing:       false
+                            mipmap: true
                             MouseArea {
                                 anchors.fill:   parent
                                 onClicked:      mainWindow.showToolSelectDialog()

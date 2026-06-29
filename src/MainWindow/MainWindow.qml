@@ -167,7 +167,7 @@ ApplicationWindow {
     }
 
     function showSettingsTool(settingsPage = "") {
-        showTool(qsTr("Application Settings"), "qrc:/qml/QGroundControl/Controls/AppSettings.qml", "/res/protthapan-logo-toolbar.png")
+        showTool(qsTr("Application Settings"), "qrc:/qml/QGroundControl/Controls/AppSettings.qml", "qrc:/custom/res/Images/protthapan-logo-toolbar.png")
         if (settingsPage !== "") {
             toolDrawerLoader.item.showSettingsPage(settingsPage)
         }
@@ -422,15 +422,21 @@ ApplicationWindow {
                 anchors.bottom:     parent.bottom
                 spacing:            ScreenTools.defaultFontPixelWidth
 
-                QGCToolBarButton {
-                    id: qgcButton
+               Image {
+                    id:         qgcButton
                     objectName: "toolbar_qgcLogo"
-                    height: parent.height
-                    icon.source: "qrc:/custom/res/Images/app-icon.png"
-                    logo: true
-                    onClicked: mainWindow.showToolSelectDialog()
+                    height:     parent.height
+                    width:      parent.height
+                    source:     "qrc:/custom/res/Images/app-icon.png"
+                    sourceSize.width:  512
+                    sourceSize.height: 512
+                    fillMode:   Image.PreserveAspectFit
+                    mipmap:     true
+                    MouseArea {
+                        anchors.fill: parent
+                        onClicked:    mainWindow.showToolSelectDialog()
+                    }
                 }
-
                 QGCLabel {
                     id:             toolbarDrawerText
                     text:           toolDrawer.toolTitle
@@ -781,65 +787,19 @@ ApplicationWindow {
         anchors.fill: parent
         z: 999999
         visible: true
-
         Rectangle {
             anchors.fill: parent
-            color: "#050F0A"
+            color: "#000000"
         }
-
-        Rectangle {
+        Image {
             anchors.centerIn: parent
-            width: 680
-            height: 340
-            radius: 22
-            color: "#071A11"
-            border.color: "#00FF88"
-            border.width: 2
-            opacity: 0.96
+            width: parent.width
+            height: parent.height
+            source: "qrc:/custom/res/Images/splash.png"
+            fillMode: Image.PreserveAspectFit
+            smooth: true
         }
 
-        Column {
-            anchors.centerIn: parent
-            spacing: 18
-
-            Image {
-                width: 105
-                height: 105
-                anchors.horizontalCenter: parent.horizontalCenter
-                source: "qrc:/custom/res/Images/splash.png"
-                fillMode: Image.PreserveAspectFit
-                smooth: true
-            }
-
-            Text {
-                text: "ProtthapanGCS"
-                color: "#E8FFF1"
-                font.pixelSize: 42
-                font.bold: true
-                anchors.horizontalCenter: parent.horizontalCenter
-            }
-
-            Text {
-                text: "Ground Control Station"
-                color: "#00FF88"
-                font.pixelSize: 20
-                anchors.horizontalCenter: parent.horizontalCenter
-            }
-
-            Text {
-                text: "Protthapan Technologies Pvt. Ltd."
-                color: "#00D4FF"
-                font.pixelSize: 18
-                anchors.horizontalCenter: parent.horizontalCenter
-            }
-
-            Text {
-                text: "MISSION READY | SECURE | AUTONOMOUS"
-                color: "#9FD8C8"
-                font.pixelSize: 13
-                anchors.horizontalCenter: parent.horizontalCenter
-            }
-        }
 
         Timer {
             interval: 2500
