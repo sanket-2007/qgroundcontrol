@@ -79,7 +79,7 @@ Item {
                             objectName:         "toolbar_qgcLogo"
                             Layout.fillHeight:  true
                             Layout.preferredWidth: ScreenTools.defaultFontPixelHeight * 4
-                            source:             "qrc:/custom/res/Images/app-icon.png"
+                            source: "qrc:/custom/res/Images/protthapan-logo-toolbar.png"
                             sourceSize.width:   512
                             sourceSize.height:  512
                             fillMode:           Image.PreserveAspectFit

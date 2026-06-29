@@ -425,9 +425,9 @@ ApplicationWindow {
                Image {
                     id:         qgcButton
                     objectName: "toolbar_qgcLogo"
-                    height:     parent.height
-                    width:      parent.height
-                    source:     "qrc:/custom/res/Images/app-icon.png"
+                    height:     ScreenTools.toolbarHeight * 0.75
+                    width:      ScreenTools.toolbarHeight * 0.75
+                    source: "qrc:/custom/res/Images/protthapan-logo-toolbar.png"
                     sourceSize.width:  512
                     sourceSize.height: 512
                     fillMode:   Image.PreserveAspectFit

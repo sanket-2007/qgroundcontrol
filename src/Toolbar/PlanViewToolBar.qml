@@ -37,7 +37,7 @@ Rectangle {
         id:         qgcButton
         objectName: "toolbar_qgcLogo"
         height:     parent.height
-        source:     "qrc:/custom/res/Images/app-icon.png"
+        source: "qrc:/custom/res/Images/protthapan-logo-toolbar.png"
         fillMode:   Image.PreserveAspectFit
         smooth:     true
         MouseArea {
