@@ -791,13 +791,14 @@ ApplicationWindow {
             anchors.fill: parent
             color: "#000000"
         }
-        Image {
+       Image {
             anchors.centerIn: parent
-            width: parent.width
-            height: parent.height
+            width: parent.width * 0.6
+            height: parent.height * 0.6
             source: "qrc:/custom/res/Images/splash.png"
             fillMode: Image.PreserveAspectFit
             smooth: true
+            mipmap: true
         }
 
 
