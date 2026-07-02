@@ -146,7 +146,9 @@ void CustomPlugin::paletteOverride(const QString& colorName, QGCPalette::Palette
     } else if (colorName == QStringLiteral("mapButton")) {
         colorInfo[QGCPalette::Dark][QGCPalette::ColorGroupEnabled] = QColor("#07130C");
     } else if (colorName == QStringLiteral("mapButtonHighlight")) {
-        colorInfo[QGCPalette::Dark][QGCPalette::ColorGroupEnabled] = accentGreen;
+    colorInfo[QGCPalette::Dark][QGCPalette::ColorGroupEnabled] = accentGreen;
+    } else if (colorName == QStringLiteral("toolbarBackground")) {
+    colorInfo[QGCPalette::Dark][QGCPalette::ColorGroupEnabled] = QColor("#0E1A12");
     }
 }
 
