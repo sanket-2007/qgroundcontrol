@@ -427,7 +427,7 @@ ApplicationWindow {
                     objectName: "toolbar_qgcLogo"
                     height:     ScreenTools.defaultFontPixelHeight * 2
                     width:      ScreenTools.defaultFontPixelHeight * 2
-                    source: "qrc:/custom/res/Images/protthapan-logo-toolbar.png"
+                    source: "qrc:/custom/res/Images/app-icon.png"
                     sourceSize.width:  512
                     sourceSize.height: 512
                     fillMode:   Image.PreserveAspectFit
